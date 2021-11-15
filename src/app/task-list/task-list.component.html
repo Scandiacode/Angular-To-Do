@@ -1,0 +1,11 @@
+<div *ngFor="let T of Tasks; index as i">
+    <button (click)="setComplete(i)" *ngIf="T.completed == false">Complete</button>
+    <p>{{ i }}{{ T.task }}</p>
+</div>
+
+<form #todoForm="ngForm" (ngSubmit)="AddTodo(todoForm)">
+    <label for="task">Please enter a task</label>
+    <input name="task" id="task" ngModel />
+
+    <button>Add to task</button>
+</form>
